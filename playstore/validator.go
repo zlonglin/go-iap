@@ -87,6 +87,10 @@ func NewWithClient(jsonKey []byte, cli *http.Client) (*Client, error) {
 	return &Client{service}, err
 }
 
+func (c *Client) GetService() *androidpublisher.Service {
+	return c.service
+}
+
 // AcknowledgeSubscription acknowledges a subscription purchase.
 func (c *Client) AcknowledgeSubscription(
 	ctx context.Context,
